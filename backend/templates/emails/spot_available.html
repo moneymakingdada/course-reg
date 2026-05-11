@@ -1,0 +1,40 @@
+{% extends "emails/base.html" %}
+
+{% block body %}
+<p class="greeting">Hi {{ student_name }},</p>
+
+<p class="text">
+  Good news — a spot has opened up in a course you've been waiting for.
+  You're <strong>#{{ position }}</strong> on the waitlist and this spot is yours to claim.
+</p>
+
+<div class="highlight-box">
+  <p class="highlight-box__course">{{ course_code }} — {{ course_title }}</p>
+  <p class="highlight-box__meta">
+    {{ schedule }}
+    {% if room %} &nbsp;·&nbsp; {{ room }}{% endif %}
+    &nbsp;·&nbsp; {{ credits }} credit{{ credits|pluralize }}
+    &nbsp;·&nbsp; {{ semester }}
+  </p>
+</div>
+
+<div class="deadline-banner">
+  ⏰ &nbsp;You have <strong>{{ accept_hours }} hours</strong> to accept this spot.
+  After that it will be offered to the next student on the waitlist.
+  <br/>Deadline: <strong>{{ deadline }}</strong>
+</div>
+
+<a class="cta-btn" href="{{ accept_url }}">Accept my spot →</a>
+
+<p class="text" style="font-size:13px; color:#888;">
+  If you no longer want this course, you can
+  <a href="{{ decline_url }}" style="color:#534AB7;">decline</a> so the next student is notified sooner.
+</p>
+
+<div class="divider"></div>
+
+<p class="text" style="font-size:13px; color:#888;">
+  You can also manage this from your
+  <a href="{{ waitlist_url }}" style="color:#534AB7;">waitlist dashboard</a>.
+</p>
+{% endblock %}

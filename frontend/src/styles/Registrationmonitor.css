@@ -1,0 +1,157 @@
+/* ─── Admin: Registration Monitor ───────────────────────────────────────────── */
+.reg-monitor {
+  flex: 1;
+  background: var(--admin-bg);
+  padding: 1.25rem;
+}
+
+.reg-monitor__title    { color: var(--admin-deeper); }
+.reg-monitor__subtitle { color: var(--admin-primary); margin-bottom: 1.25rem; }
+
+/* ── Filter bar ── */
+.reg-monitor__filters {
+  background: #fff;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.reg-monitor__filter-input,
+.reg-monitor__filter-select {
+  padding: 7px 12px;
+  font-size: 13px;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 8px;
+  outline: none;
+  background: var(--admin-bg);
+  color: var(--admin-deeper);
+  font-family: var(--font-sans);
+}
+
+.reg-monitor__filter-input  { flex: 1; min-width: 160px; }
+.reg-monitor__filter-select { min-width: 140px; }
+
+.reg-monitor__filter-btn {
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--admin-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── Summary KPI row ── */
+.reg-monitor__kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+/* ── Results table ── */
+.reg-monitor__table-wrap {
+  background: #fff;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.reg-monitor__meta {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #888;
+  border-bottom: 0.5px solid var(--admin-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reg-monitor__export-btn {
+  font-size: 11px;
+  padding: 4px 12px;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--admin-dark);
+  cursor: pointer;
+}
+
+.reg-monitor__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+.reg-monitor__table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--admin-text);
+  padding: 9px 14px;
+  background: var(--admin-bg);
+  border-bottom: 0.5px solid var(--admin-muted);
+}
+
+.reg-monitor__table td {
+  padding: 11px 14px;
+  border-bottom: 0.5px solid var(--admin-light);
+  vertical-align: middle;
+}
+
+.reg-monitor__table tr:last-child td { border-bottom: none; }
+.reg-monitor__table tr:hover td      { background: #fffdf8; }
+
+/* Student cell */
+.reg-monitor__student {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.reg-monitor__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--admin-light);
+  color: var(--admin-dark);
+  font-size: 10px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.reg-monitor__student-name { font-weight: 500; color: var(--admin-deeper); margin: 0; }
+.reg-monitor__student-id   { font-size: 11px; color: #888; margin: 0; }
+
+/* Status pills */
+.reg-status {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  font-weight: 500;
+}
+
+.reg-status--enrolled  { background: var(--color-success-bg); color: var(--color-success-text); }
+.reg-status--dropped   { background: var(--color-danger-bg);  color: var(--color-danger-text); }
+.reg-status--completed { background: var(--color-info-bg);    color: var(--color-info-text); }
+
+/* Empty state */
+.reg-monitor__empty {
+  padding: 40px;
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+}

@@ -1,0 +1,18 @@
+{% extends "emails/base.html" %}
+
+{% block body %}
+<p class="greeting">Hi {{ student_name }},</p>
+
+<p class="text">
+  Unfortunately your reserved spot in <strong>{{ course_code }} — {{ course_title }}</strong>
+  has expired because it wasn't accepted within the {{ accept_hours }}-hour window.
+  The spot has been offered to the next student on the waitlist.
+</p>
+
+<p class="text">
+  You're still on the waitlist at position <strong>#{{ new_position }}</strong>.
+  We'll notify you again if another spot opens up.
+</p>
+
+<a class="cta-btn" href="{{ waitlist_url }}">View my waitlist →</a>
+{% endblock %}

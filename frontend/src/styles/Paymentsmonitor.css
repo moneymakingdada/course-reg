@@ -1,0 +1,252 @@
+/* ─── Admin: Payments ────────────────────────────────────────────────────────── */
+.payments-page {
+  flex: 1;
+  background: var(--admin-bg);
+  padding: 1.25rem;
+}
+
+.payments-page__title    { color: var(--admin-deeper); }
+.payments-page__subtitle { color: var(--admin-primary); margin-bottom: 1.25rem; }
+
+/* ── Summary cards ── */
+.payments-page__kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+/* ── Filter bar ── */
+.payments-page__filters {
+  background: #fff;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.payments-page__filter-select,
+.payments-page__filter-input {
+  padding: 7px 12px;
+  font-size: 13px;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 8px;
+  outline: none;
+  background: var(--admin-bg);
+  color: var(--admin-deeper);
+  font-family: var(--font-sans);
+  min-width: 140px;
+}
+
+.payments-page__filter-input { flex: 1; min-width: 160px; }
+
+/* ── Tab bar ── */
+.payments-page__tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 1rem;
+}
+
+.payments-tab {
+  padding: 7px 16px;
+  font-size: 13px;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 8px;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.payments-tab.active {
+  background: var(--admin-light);
+  border-color: var(--admin-text);
+  color: var(--admin-dark);
+  font-weight: 500;
+}
+
+/* ── Table ── */
+.payments-table-wrap {
+  background: #fff;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.payments-table-meta {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #888;
+  border-bottom: 0.5px solid var(--admin-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+.payments-table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--admin-text);
+  padding: 9px 14px;
+  background: var(--admin-bg);
+  border-bottom: 0.5px solid var(--admin-muted);
+}
+
+.payments-table td {
+  padding: 11px 14px;
+  border-bottom: 0.5px solid var(--admin-light);
+  vertical-align: middle;
+}
+
+.payments-table tr:last-child td { border-bottom: none; }
+.payments-table tr:hover td      { background: #fffdf8; }
+
+/* Payment status */
+.pay-status {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  font-weight: 500;
+}
+
+.pay-status--confirmed { background: var(--color-success-bg); color: var(--color-success-text); }
+.pay-status--pending   { background: var(--color-warning-bg); color: var(--color-warning-text); }
+.pay-status--failed    { background: var(--color-danger-bg);  color: var(--color-danger-text); }
+
+/* Payment method pill */
+.pay-method-pill {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  background: var(--admin-light);
+  color: var(--admin-dark);
+}
+
+/* Amount cell */
+.pay-amount {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--admin-deeper);
+}
+
+/* Reference cell */
+.pay-reference {
+  font-size: 11px;
+  color: #888;
+  font-family: monospace;
+}
+
+/* Action button */
+.pay-action-btn {
+  font-size: 11px;
+  padding: 3px 10px;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--admin-primary);
+  cursor: pointer;
+}
+
+.pay-action-btn--confirm {
+  background: var(--color-success-bg);
+  color: var(--color-success-text);
+  border-color: var(--color-success);
+}
+
+/* ── Revenue chart card ── */
+.payments-chart-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.payments-chart-card {
+  background: #fff;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.payments-chart-card__title {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--admin-dark);
+  margin: 0 0 14px;
+}
+
+.payments-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 100px;
+}
+
+.payments-bar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.payments-bar-col__val   { font-size: 9px; color: var(--admin-primary); }
+.payments-bar-col__label { font-size: 9px; color: var(--admin-text); }
+
+.payments-bar {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  background: var(--admin-light);
+  transition: height 0.3s ease;
+}
+
+.payments-bar--highlight { background: var(--admin-text); }
+
+/* Method breakdown list */
+.payments-methods-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payments-method-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.payments-method-item__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--admin-deeper);
+}
+
+.payments-method-item__pct { color: var(--admin-text); }
+
+.payments-method-track {
+  height: 6px;
+  background: var(--admin-light);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.payments-method-fill {
+  height: 6px;
+  border-radius: 99px;
+  background: var(--admin-text);
+}

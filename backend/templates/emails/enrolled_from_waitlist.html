@@ -1,0 +1,27 @@
+{% extends "emails/base.html" %}
+
+{% block body %}
+<p class="greeting">Hi {{ student_name }},</p>
+
+<p class="text">
+  You've been successfully enrolled from the waitlist. Welcome to the course!
+</p>
+
+<div class="highlight-box">
+  <p class="highlight-box__course">{{ course_code }} — {{ course_title }}</p>
+  <p class="highlight-box__meta">
+    {{ schedule }}
+    {% if room %} &nbsp;·&nbsp; {{ room }}{% endif %}
+    &nbsp;·&nbsp; {{ credits }} credit{{ credits|pluralize }}
+    &nbsp;·&nbsp; {{ semester }}
+  </p>
+</div>
+
+<p class="text">
+  This course is now showing in your
+  <a href="{{ dashboard_url }}" style="color:#534AB7;">student dashboard</a>.
+  Make sure to complete payment if you haven't done so already.
+</p>
+
+<a class="cta-btn" href="{{ dashboard_url }}">Go to dashboard →</a>
+{% endblock %}

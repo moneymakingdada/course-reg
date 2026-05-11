@@ -1,0 +1,636 @@
+/* Page wrapper */
+.waitlist {
+  padding: 1.25rem;
+  background: #F5F4FE;
+  flex: 1;
+}
+
+/* Titles */
+.waitlist__title {
+  font-size: 17px;
+  font-weight: 500;
+  color: #26215C;
+  margin: 0 0 4px;
+}
+
+.waitlist__subtitle {
+  font-size: 12px;
+  color: #7F77DD;
+  margin: 0 0 1.25rem;
+}
+
+/* Pending spot alert */
+.waitlist__alert {
+  background: #EEEDFE;
+  border: 0.5px solid #AFA9EC;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #3C3489;
+}
+
+/* Buttons */
+.waitlist__btn {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* Primary button (Enroll) */
+.waitlist__btn--primary {
+  background: #534AB7;
+  color: #fff;
+  border: none;
+}
+
+/* Secondary button (Drop) */
+.waitlist__btn--secondary {
+  border: 0.5px solid #CECBF6;
+  background: transparent;
+  color: #888;
+}
+
+/* Loading + error */
+.waitlist__loading {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.waitlist__error {
+  font-size: 13px;
+  color: #791F1F;
+}
+
+/* Empty state */
+.waitlist__empty {
+  background: #fff;
+  border: 0.5px solid #CECBF6;
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+}
+
+.waitlist__empty p {
+  font-size: 14px;
+  color: #888;
+  margin: 0;
+}
+
+/* Table wrapper */
+.waitlist__table-wrap {
+  background: #fff;
+  border: 0.5px solid #CECBF6;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Table */
+.waitlist__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+/* Table header */
+.waitlist__table th {
+  text-align: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #7F77DD;
+  padding: 9px 14px;
+  border-bottom: 0.5px solid #CECBF6;
+  background: #F5F4FE;
+}
+
+/* Table cells */
+.waitlist__table td {
+  padding: 12px 14px;
+  border-bottom: 0.5px solid #EEEDFE;
+  vertical-align: middle;
+}
+
+/* Course info */
+.waitlist__course-title {
+  font-weight: 500;
+  color: #26215C;
+  margin: 0 0 2px;
+  font-size: 13px;
+}
+
+.waitlist__course-sub {
+  font-size: 11px;
+  color: #7F77DD;
+  margin: 0;
+}
+
+/* Position badge */
+.waitlist__position {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #EEEDFE;
+  color: #3C3489;
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Capacity bar */
+.waitlist__capacity {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.waitlist__capacity-bar {
+  width: 60px;
+  height: 4px;
+  background: #EEEDFE;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.waitlist__capacity-fill {
+  height: 4px;
+  border-radius: 99px;
+}
+
+/* Dynamic states */
+.waitlist__capacity-fill.normal {
+  background: #1D9E75;
+}
+
+.waitlist__capacity-fill.high {
+  background: #BA7517;
+}
+
+.waitlist__capacity-fill.full {
+  background: #E24B4A;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Instructor Waitlist Management — teal theme
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.instr-waitlist {
+  flex: 1;
+  background: var(--instructor-bg);
+  padding: 1.25rem;
+}
+
+.instr-waitlist__title    { color: var(--instructor-deeper); }
+.instr-waitlist__subtitle { color: var(--instructor-primary); margin-bottom: 1.25rem; }
+
+/* Course selector tabs */
+.instr-waitlist__course-tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.instr-waitlist__course-tab {
+  padding: 7px 14px;
+  font-size: 13px;
+  border: 0.5px solid var(--instructor-muted);
+  border-radius: 8px;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.instr-waitlist__course-tab.active {
+  background: var(--instructor-light);
+  border-color: var(--instructor-primary);
+  color: var(--instructor-deeper);
+  font-weight: 500;
+}
+
+.instr-waitlist__course-tab-badge {
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 99px;
+  background: var(--instructor-primary);
+  color: #fff;
+  min-width: 18px;
+  text-align: center;
+}
+
+.instr-waitlist__course-tab.active .instr-waitlist__course-tab-badge {
+  background: var(--instructor-dark);
+}
+
+/* Action bar */
+.instr-waitlist__action-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.instr-waitlist__action-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.instr-waitlist__filter-select {
+  padding: 7px 12px;
+  font-size: 12px;
+  border: 0.5px solid var(--instructor-muted);
+  border-radius: 8px;
+  outline: none;
+  background: #fff;
+  color: var(--instructor-deeper);
+  font-family: var(--font-sans);
+}
+
+/* Waitlist table card */
+.instr-waitlist__card {
+  background: #fff;
+  border: 0.5px solid var(--instructor-muted);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.instr-waitlist__card-meta {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #888;
+  border-bottom: 0.5px solid var(--instructor-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.instr-waitlist__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+.instr-waitlist__table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--instructor-text);
+  padding: 9px 14px;
+  background: var(--instructor-bg);
+  border-bottom: 0.5px solid var(--instructor-muted);
+}
+
+.instr-waitlist__table td {
+  padding: 11px 14px;
+  border-bottom: 0.5px solid var(--instructor-light);
+  vertical-align: middle;
+}
+
+.instr-waitlist__table tr:last-child td { border-bottom: none; }
+.instr-waitlist__table tr:hover td      { background: #f8fdfb; }
+
+/* Student cell */
+.instr-wl-student {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.instr-wl-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--instructor-light);
+  color: var(--instructor-dark);
+  font-size: 10px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.instr-wl-name { font-weight: 500; color: var(--instructor-deeper); margin: 0 0 1px; }
+.instr-wl-email { font-size: 11px; color: #888; margin: 0; }
+
+/* Position bubble */
+.instr-wl-position {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--instructor-light);
+  color: var(--instructor-dark);
+  font-size: 12px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Status pill */
+.wl-status {
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 99px;
+  font-weight: 500;
+}
+
+.wl-status--waiting  { background: var(--color-warning-bg);  color: var(--color-warning-text); }
+.wl-status--notified { background: var(--student-light);      color: var(--student-dark); }
+.wl-status--accepted { background: var(--color-success-bg);   color: var(--color-success-text); }
+
+/* Action buttons */
+.instr-wl-btn {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 4px;
+  border: 0.5px solid var(--instructor-muted);
+  background: transparent;
+  color: var(--instructor-primary);
+  transition: background 0.1s;
+}
+
+.instr-wl-btn:hover { background: var(--instructor-light); }
+
+.instr-wl-btn--enroll {
+  background: var(--instructor-primary);
+  color: #fff;
+  border-color: var(--instructor-primary);
+  font-weight: 500;
+}
+
+.instr-wl-btn--enroll:hover { opacity: 0.88; }
+
+.instr-wl-btn--remove {
+  color: var(--color-danger-text);
+  border-color: var(--color-danger);
+}
+
+.instr-wl-btn--remove:hover { background: var(--color-danger-bg); }
+
+.instr-wl-btn--notify {
+  background: var(--student-light);
+  color: var(--student-dark);
+  border-color: var(--student-muted);
+  font-weight: 500;
+}
+
+/* Empty state */
+.instr-waitlist__empty {
+  padding: 40px;
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* Remove reason modal */
+.remove-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+}
+
+.remove-modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 400px;
+  max-width: 90vw;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+}
+
+.remove-modal__title { font-size: 15px; font-weight: 500; color: #1a1a2e; margin: 0 0 8px; }
+.remove-modal__sub   { font-size: 13px; color: #888; margin: 0 0 1rem; }
+
+.remove-modal__textarea {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 13px;
+  border: 0.5px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-family: var(--font-sans);
+  resize: vertical;
+  min-height: 80px;
+  margin-bottom: 1rem;
+}
+
+.remove-modal__actions { display: flex; gap: 8px; justify-content: flex-end; }
+
+.remove-modal__cancel {
+  padding: 8px 16px;
+  font-size: 13px;
+  border: 0.5px solid #ddd;
+  border-radius: 8px;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+}
+
+.remove-modal__confirm {
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--color-danger-text);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Admin Waitlist Management — amber theme
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.admin-waitlist {
+  flex: 1;
+  background: var(--admin-bg);
+  padding: 1.25rem;
+}
+
+.admin-waitlist__title    { color: var(--admin-deeper); }
+.admin-waitlist__subtitle { color: var(--admin-primary); margin-bottom: 1.25rem; }
+
+/* Filter bar */
+.admin-waitlist__filters {
+  background: #fff;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.admin-waitlist__filter-input,
+.admin-waitlist__filter-select {
+  padding: 7px 12px;
+  font-size: 13px;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 8px;
+  outline: none;
+  background: var(--admin-bg);
+  color: var(--admin-deeper);
+  font-family: var(--font-sans);
+}
+
+.admin-waitlist__filter-input  { flex: 1; min-width: 160px; }
+.admin-waitlist__filter-select { min-width: 140px; }
+
+.admin-waitlist__filter-btn {
+  padding: 7px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--admin-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Table */
+.admin-waitlist__table-wrap {
+  background: #fff;
+  border: 0.5px solid var(--admin-muted);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.admin-waitlist__meta {
+  padding: 10px 16px;
+  font-size: 12px;
+  color: #888;
+  border-bottom: 0.5px solid var(--admin-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.admin-waitlist__meta-actions { display: flex; gap: 6px; }
+
+.admin-waitlist__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  table-layout: fixed;
+}
+
+.admin-waitlist__table th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--admin-text);
+  padding: 9px 14px;
+  background: var(--admin-bg);
+  border-bottom: 0.5px solid var(--admin-muted);
+}
+
+.admin-waitlist__table td {
+  padding: 11px 14px;
+  border-bottom: 0.5px solid var(--admin-light);
+  vertical-align: middle;
+}
+
+.admin-waitlist__table tr:last-child td { border-bottom: none; }
+.admin-waitlist__table tr:hover td      { background: #fffdf8; }
+
+/* Admin-themed student avatar */
+.admin-wl-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--admin-light);
+  color: var(--admin-dark);
+  font-size: 10px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.admin-wl-btn {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 4px;
+  border: 0.5px solid var(--admin-muted);
+  background: transparent;
+  color: var(--admin-primary);
+  transition: background 0.1s;
+}
+
+.admin-wl-btn:hover { background: var(--admin-light); }
+
+.admin-wl-btn--danger {
+  color: var(--color-danger-text);
+  border-color: var(--color-danger);
+}
+
+.admin-wl-btn--danger:hover { background: var(--color-danger-bg); }
+
+.admin-wl-btn--primary {
+  background: var(--admin-primary);
+  color: #fff;
+  border-color: var(--admin-primary);
+  font-weight: 500;
+}
+
+.admin-waitlist__empty {
+  padding: 40px;
+  text-align: center;
+  color: #aaa;
+  font-size: 13px;
+}
+
+/* Clear all confirmation banner */
+.clear-warning-banner {
+  background: var(--color-danger-bg);
+  border: 0.5px solid var(--color-danger);
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.clear-warning-banner__text {
+  font-size: 13px;
+  color: var(--color-danger-text);
+  flex: 1;
+}
+
+.clear-warning-banner__actions { display: flex; gap: 6px; }

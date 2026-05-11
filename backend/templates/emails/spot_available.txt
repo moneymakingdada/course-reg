@@ -1,0 +1,19 @@
+Hi {{ student_name }},
+
+A spot has opened in {{ course_code }} — {{ course_title }}.
+You are #{{ position }} on the waitlist.
+
+Course: {{ course_code }} — {{ course_title }}
+Schedule: {{ schedule }}{% if room %} · {{ room }}{% endif %}
+Credits: {{ credits }}
+Semester: {{ semester }}
+
+⏰ You have {{ accept_hours }} hours to accept (deadline: {{ deadline }}).
+
+Accept your spot: {{ accept_url }}
+Decline: {{ decline_url }}
+
+Manage your waitlists: {{ waitlist_url }}
+
+---
+CourseReg · University Course Registration System

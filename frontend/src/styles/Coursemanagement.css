@@ -1,0 +1,214 @@
+/* ─── Instructor: Course Management ─────────────────────────────────────────── */
+.course-mgmt {
+  flex: 1;
+  background: var(--instructor-bg);
+  padding: 1.25rem;
+}
+
+.course-mgmt__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+}
+
+.course-mgmt__title    { color: var(--instructor-deeper); }
+.course-mgmt__subtitle { color: var(--instructor-primary); margin-top: 3px; }
+
+/* ── Courses grid ── */
+.course-mgmt__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.course-mgmt-card {
+  background: #fff;
+  border: 0.5px solid var(--instructor-muted);
+  border-radius: 10px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+
+.course-mgmt-card:hover { box-shadow: 0 2px 14px rgba(15,110,86,0.1); }
+
+.course-mgmt-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.course-mgmt-card__code {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--instructor-deeper);
+  margin: 0;
+}
+
+.course-mgmt-card__title {
+  font-size: 12px;
+  color: var(--instructor-primary);
+  margin: 0;
+}
+
+.course-mgmt-card__meta {
+  font-size: 11px;
+  color: #888;
+  margin: 0;
+}
+
+.course-mgmt-card__fill {
+  margin-top: 4px;
+}
+
+.course-mgmt-card__fill-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--instructor-primary);
+  margin-bottom: 4px;
+}
+
+.course-mgmt-card__bar-track {
+  height: 5px;
+  background: var(--instructor-light);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.course-mgmt-card__bar-fill {
+  height: 5px;
+  border-radius: 99px;
+  background: var(--instructor-primary);
+  transition: width 0.3s ease;
+}
+
+.course-mgmt-card__bar-fill--full { background: var(--color-danger); }
+.course-mgmt-card__bar-fill--near { background: var(--color-warning); }
+
+.course-mgmt-card__actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+/* ── Add course modal / form panel ── */
+.course-form-panel {
+  background: #fff;
+  border: 0.5px solid var(--instructor-muted);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.course-form-panel__title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--instructor-deeper);
+  margin: 0 0 1rem;
+  padding-bottom: 10px;
+  border-bottom: 0.5px solid var(--instructor-muted);
+}
+
+.course-form__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.course-form__grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.course-form__label {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--instructor-primary);
+  margin-bottom: 4px;
+}
+
+.course-form__input,
+.course-form__select,
+.course-form__textarea {
+  width: 100%;
+  padding: 9px 12px;
+  font-size: 13px;
+  border: 0.5px solid var(--instructor-muted);
+  border-radius: 8px;
+  outline: none;
+  color: var(--instructor-deeper);
+  background: #fff;
+  transition: border-color 0.15s;
+  font-family: var(--font-sans);
+}
+
+.course-form__input:focus,
+.course-form__select:focus,
+.course-form__textarea:focus {
+  border-color: var(--instructor-primary);
+}
+
+.course-form__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.course-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 0.5px solid var(--instructor-light);
+}
+
+.course-form__btn-cancel {
+  padding: 9px 18px;
+  font-size: 13px;
+  border: 0.5px solid var(--instructor-muted);
+  border-radius: 8px;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+}
+
+.course-form__btn-submit {
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--instructor-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.course-form__btn-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Status badge on card */
+.course-status {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-weight: 500;
+}
+
+.course-status--active   { background: var(--instructor-light); color: var(--instructor-dark); }
+.course-status--inactive { background: #f0f0f0; color: #888; }
+.course-status--full     { background: var(--color-danger-bg); color: var(--color-danger-text); }

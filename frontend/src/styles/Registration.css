@@ -1,0 +1,203 @@
+/* ─── Registration (multi-step) ──────────────────────────────────────────────── */
+.registration {
+  flex: 1;
+  background: var(--student-bg);
+}
+
+.registration__body {
+  padding: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Cart step */
+.reg-cart__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 0.5px solid var(--student-light);
+}
+
+.reg-cart__item:last-of-type { border-bottom: none; }
+
+.reg-cart__name {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--student-deeper);
+  margin: 0 0 2px;
+}
+
+.reg-cart__meta {
+  font-size: 11px;
+  color: var(--student-text);
+  margin: 0;
+}
+
+.reg-cart__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.reg-cart__credits {
+  font-size: 12px;
+  color: var(--student-text);
+}
+
+/* Review step */
+.reg-review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.reg-summary__row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding: 4px 0;
+  border-bottom: 0.5px solid var(--student-light);
+}
+
+.reg-summary__row--fee  { font-size: 12px; color: #888; }
+.reg-summary__row--total {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 0 0;
+  color: var(--student-primary);
+  border-top: 0.5px solid #CECBF6;
+  border-bottom: none;
+  margin-top: 4px;
+}
+
+/* Payment step */
+.reg-payment__methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.reg-payment__method {
+  border: 0.5px solid #CECBF6;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.reg-payment__method.selected {
+  border-color: var(--student-primary);
+  background: var(--student-light);
+}
+
+.reg-payment__method-label {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+.reg-payment__method.selected .reg-payment__method-label {
+  color: var(--student-dark);
+  font-weight: 500;
+}
+
+.reg-payment__amount {
+  background: var(--student-bg);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+}
+
+.reg-payment__amount-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--student-primary);
+}
+
+/* Action row (back / next) */
+.reg-action-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.reg-btn-back {
+  padding: 9px 18px;
+  font-size: 13px;
+  border: 0.5px solid #CECBF6;
+  border-radius: 8px;
+  background: transparent;
+  color: #888;
+  cursor: pointer;
+}
+
+.reg-btn-next {
+  padding: 9px 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--student-primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.reg-btn-next:disabled {
+  background: var(--student-muted);
+  cursor: not-allowed;
+}
+
+/* Confirm step */
+.reg-confirm {
+  background: #fff;
+  border: 0.5px solid #9FE1CB;
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+}
+
+.reg-confirm__icon  { font-size: 48px; margin-bottom: 16px; }
+
+.reg-confirm__title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--instructor-dark);
+  margin: 0 0 8px;
+}
+
+.reg-confirm__sub {
+  font-size: 13px;
+  color: var(--instructor-primary);
+  margin: 0 0 20px;
+}
+
+.reg-confirm__link {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--instructor-primary);
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* Payment amount label margin */
+.reg-payment__amount--spaced { margin-top: 1rem; }
+
+.auth-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 9px 12px;
+  font-size: 13px;
+  border: 0.5px solid #cecbf6;
+  border-radius: 8px;
+  outline: none;
+}
